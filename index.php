@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
     <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta name="viewport" content="width=device-width" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php wp_head(); ?>
+
         <title>Edmin</title>
         <link type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -12,7 +16,8 @@
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
     </head>
-    <body>
+    <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -24,12 +29,25 @@
                             <li><a href="#"><i class="icon-eye-open"></i></a></li>
                             <li><a href="#"><i class="icon-bar-chart"></i></a></li>
                         </ul>
-                        <form class="navbar-search pull-left input-append" action="#">
-                        <input type="text" class="span3">
+                        
+                       
+                        <form class="navbar-search pull-left input-append" action="/" method="get">
+                        <input class="span3" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
                         <button class="btn" type="button">
                             <i class="icon-search"></i>
                         </button>
                         </form>
+
+
+                        <!--
+                        <form action="/" method="get">
+                        <label for="search">Search in <?php echo home_url( '/' ); ?></label>
+                        <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
+                        <input type="image" alt="Search" src="<?php bloginfo( 'template_url' ); ?>/images/search.png" />
+                        </form>
+                        -->
+                        <!-- https://developer.wordpress.org/reference/functions/get_search_form/ -->
+
                         <ul class="nav pull-right">
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
