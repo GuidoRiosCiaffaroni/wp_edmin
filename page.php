@@ -4,28 +4,7 @@
 <div class="span9">
                         <div class="content">
 
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      
 <!--/#btn-controls-->
                             <div class="module">
                                 <div class="module-head">
@@ -118,37 +97,6 @@
                                 </div>
                             </div>
                             <!--/.module-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

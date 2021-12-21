@@ -1,3 +1,16 @@
+<?php 
+$current_user_ID = wp_get_current_user(); 
+$current_user_login = $current_user->user_login;
+$current_user_email = $current_user->user_email;
+$current_user_firstname = $current_user->user_firstname;
+$current_user_lastname = $current_user->user_lastname;
+$current_user_ID = $current_user->ID;
+
+$url = home_url( '/' );
+
+?>
+
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -110,6 +123,11 @@
                         <!--Inico Sidebar -->
                         
                         <div class="sidebar">
+
+                            <ul class="widget widget-menu unstyled">
+                                <li class="active"><a href="<?php echo $url ?>"><?php echo 'Usuario : '.$current_user_login; ?></a></i>
+                            </ul>
+
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
