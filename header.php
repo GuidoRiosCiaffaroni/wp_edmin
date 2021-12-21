@@ -20,7 +20,7 @@ $url = home_url( '/' );
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php wp_head(); ?>
-        <title>Edmin</title>
+        <title><?php bloginfo( 'name' ); ?></title>
         <link type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo get_template_directory_uri(); ?>/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/theme.css" rel="stylesheet">
@@ -57,16 +57,9 @@ $url = home_url( '/' );
 
 
 
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
                                 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"> --> </a></li>
-                                    <li><a href="#">Item No. 1</a></li>
-                                    <li><a href="#">Don't Click</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header">Example Header</li>
-                                    <li><a href="#">A Separated link</a></li>
-                                    
+                                <ul class="dropdown-menu">                                    
                                     
                                     <?php 
                                     wp_nav_menu( 
@@ -104,7 +97,7 @@ $url = home_url( '/' );
                                     <li><a href="#">Edit Profile</a></li>
                                     <li><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Logout</a></li>
+                                    <li><a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
