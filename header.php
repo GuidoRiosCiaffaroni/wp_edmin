@@ -40,6 +40,33 @@
                         </button>
                         </form>
                         <ul class="nav pull-right">
+
+
+
+
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"> --> </a></li>
+                                    <li><a href="#">Item No. 1</a></li>
+                                    <li><a href="#">Don't Click</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Example Header</li>
+                                    <li><a href="#">A Separated link</a></li>
+                                    
+                                    
+                                    <?php 
+                                    wp_nav_menu( 
+                                        array( 
+                                            'theme_location' => 'main-menu', 
+                                            'link_before' => '<span itemprop="name">', 
+                                            'link_after' => '</span>' 
+                                        ) 
+                                    ); 
+                                    ?>
+                                </ul>
+                            </li>
+
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -51,6 +78,10 @@
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
+
+
+
+
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/user.png" class="nav-avatar" />
