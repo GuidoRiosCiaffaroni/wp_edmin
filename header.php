@@ -8,6 +8,8 @@ $current_user_ID = $current_user->ID;
 
 $url = home_url( '/' );
 
+/**/
+
 ?>
 
 
@@ -53,10 +55,6 @@ $url = home_url( '/' );
                         </button>
                         </form>
                         <ul class="nav pull-right">
-
-
-
-
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">                                    
@@ -84,9 +82,6 @@ $url = home_url( '/' );
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
-
-
-
 
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
