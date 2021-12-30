@@ -1,12 +1,27 @@
 <?php 
-$current_user_ID = wp_get_current_user(); 
+
+$url = home_url( '/' );
+
+$current_user = wp_get_current_user(); 
 $current_user_login = $current_user->user_login;
 $current_user_email = $current_user->user_email;
 $current_user_firstname = $current_user->user_firstname;
 $current_user_lastname = $current_user->user_lastname;
 $current_user_ID = $current_user->ID;
 
-$url = home_url( '/' );
+/*
+$user = new WP_User( $current_user_ID );
+
+if ( ! empty( $user->roles ) && is_array( $user->roles ) && in_array( 'Some_role', $user->roles ) ) 
+{
+    return true;
+}
+
+$current_user_roles = $user->roles;
+*/
+
+$current_user_roles = $current_user->roles;
+
 
 ?>
 
@@ -46,12 +61,16 @@ $url = home_url( '/' );
                             <li><a href="#"><i class="icon-eye-open"></i></a></li>
                             <li><a href="#"><i class="icon-bar-chart"></i></a></li>
                         </ul>
-                        <form class="navbar-search pull-left input-append" action="#">
-                        <input type="text" class="span3">
-                        <button class="btn" type="button">
-                            <i class="icon-search"></i>
-                        </button>
-                        </form>
+
+
+                        <form id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <input type="text" class="search-field" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
+                            <input type="submit" value="Search">
+                        </form> 
+
+
+
+                        <?php //get_search_form(); ?>
                         <ul class="nav pull-right">
 
 
@@ -73,10 +92,11 @@ $url = home_url( '/' );
                                 </ul>
                             </li>
 
+                            <!--
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#"> --> </a></li>
+                                    <li><a href="#">  </a></li>
                                     <li><a href="#">Item No. 1</a></li>
                                     <li><a href="#">Don't Click</a></li>
                                     <li class="divider"></li>
@@ -84,8 +104,7 @@ $url = home_url( '/' );
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
-
-
+                        -->
 
 
                             <li><a href="#">Support </a></li>
@@ -93,6 +112,7 @@ $url = home_url( '/' );
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/user.png" class="nav-avatar" />
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    <li><?php echo $current_user_roles; ?></li>
                                     <li><a href="#">Your Profile</a></li>
                                     <li><a href="#">Edit Profile</a></li>
                                     <li><a href="#">Account Settings</a></li>
