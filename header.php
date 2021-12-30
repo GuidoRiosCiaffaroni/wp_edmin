@@ -23,6 +23,8 @@ $current_user_roles = $user->roles;
 $current_user_roles = $current_user->roles;
 
 
+/**/
+
 ?>
 
 
@@ -72,10 +74,6 @@ $current_user_roles = $current_user->roles;
 
                         <?php //get_search_form(); ?>
                         <ul class="nav pull-right">
-
-
-
-
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">                                    
@@ -104,8 +102,11 @@ $current_user_roles = $current_user->roles;
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
                         -->
 
+=======
+>>>>>>> 37ad2b31af91d254c57691ac1f15dd9395d29147
 
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
