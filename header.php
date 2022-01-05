@@ -129,7 +129,7 @@ $current_user_roles = $current_user->roles;
                     echo '
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/user.png" class="nav-avatar" />
+                                <img src="'.get_template_directory_uri().'/images/user.png" class="nav-avatar" />
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><?php echo $current_user_roles; ?></li>
