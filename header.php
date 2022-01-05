@@ -189,55 +189,15 @@ $current_user_roles = $current_user->roles;
                             </ul>
 
 
-
-
-
-
-
-
-
-
-
 <?php
         if (get_current_user_id() != NULL) 
         {
 
             echo "<p class='exito'><b>Usuario validado</b>. Puede ingresar los datos.<p></br>";
 
-            /*
-            echo '
-            <script type="text/javascript">
-            var URLactual = window.location;  alert(URLactual);
-            </script>
-            ';
-            */
-
-
         }
         else
         {
-
-            // echo "<p class='exito'><b>Usuario no validado</b>.<p>";
-
-            /*
-            echo '
-            <script type="text/javascript">
-            
-            var URLactual = window.location;  
-            alert(URLactual);
-            
-            </script>
-            
-
-            ';
-
-            
-            echo '
-            <script type="text/javascript">
-                window.location.href = "'.get_site_url().'/login";
-            </script>
-            ';
-            */
 
             echo '
 
@@ -250,26 +210,11 @@ $current_user_roles = $current_user->roles;
 
             </script>
 
-
             ';
-
-
-
 
         }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
 
 
                             <ul class="widget widget-menu unstyled">
