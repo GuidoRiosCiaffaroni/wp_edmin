@@ -1,4 +1,18 @@
- </div>
+
+                    <?php
+                    if (get_current_user_id() != NULL) 
+                    {
+                        echo '
+                            </div>
+                        </div>
+                        ';
+                    }
+                    ?>
+
+
+
+
+                </div>
             </div>
             <!--/.container-->
         </div>

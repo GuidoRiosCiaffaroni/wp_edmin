@@ -27,7 +27,6 @@ $current_user_roles = $current_user->roles;
 
 ?>
 
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -58,6 +57,9 @@ $current_user_roles = $current_user->roles;
                         if ( is_front_page() || is_home() || is_front_page() && is_home() ) { }
                         ?>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
+
+
+
                         <ul class="nav nav-icons">
                             <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
                             <li><a href="#"><i class="icon-eye-open"></i></a></li>
@@ -70,6 +72,7 @@ $current_user_roles = $current_user->roles;
                             <input type="submit" value="Search">
                         </form> 
                         -->
+
                         <?php //get_search_form(); ?>
                         
                         <ul class="nav pull-right">
@@ -89,7 +92,7 @@ $current_user_roles = $current_user->roles;
                                 </ul>
                             </li>
 
-                            <!--
+                            
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -101,9 +104,6 @@ $current_user_roles = $current_user->roles;
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
-
-                            -->
-
 
 
                             <li><a href="#">Support </a></li>
@@ -120,6 +120,11 @@ $current_user_roles = $current_user->roles;
                                 </ul>
                             </li>
                         </ul>
+
+
+
+
+
                     </div>
                     <!-- /.nav-collapse -->
                 </div>
@@ -129,102 +134,52 @@ $current_user_roles = $current_user->roles;
         <!-- /navbar -->
         <div class="wrapper">
             <div class="container">
+                
                 <div class="row">
-                    <div class="span3">
-
-                        <!--Inico Sidebar -->
-                        
-                        <div class="sidebar">
-
-                            <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="<?php echo $url ?>"><?php echo 'Usuario : '.$current_user_login; ?></a></i>
-                            </ul>
-
-                            <ul class="widget widget-menu unstyled">
-                                <li class="active">
-                                    <a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
-                                </li>
-                                <li>
-                                    <a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox 
-                                        <b class="label green pull-right">11</b> 
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks 
-                                        <b class="label orange pull-right">19</b> 
-                                    </a>
-                                </li>
-                            </ul>
-                            <!--/.widget-nav-->
-                            
-                            
-                            <ul class="widget widget-menu unstyled">
-                                <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li>
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-                            </ul>
-                            <!--/.widget-nav-->
+                    <div class="span3">    
 
 
-
-                            <ul class="widget widget-menu unstyled">
-                                <li>
-                                    <a class="collapsed" data-toggle="collapse" href="#togglePages">
-                                        <i class="menu-icon icon-cog"></i>
-                                        <i class="icon-chevron-down pull-right"></i>
-                                        <i class="icon-chevron-up pull-right"></i>More Pages 
-                                    </a>
-                                    <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
-                            </ul>
+                    <?php
+                    if (get_current_user_id() != NULL) 
+                    {
+                        get_sidebar();
+                    }
+                    ?>
 
 
-<?php
-        if (get_current_user_id() != NULL) 
-        {
-
-            echo "<p class='exito'><b>Usuario validado</b>. Puede ingresar los datos.<p></br>";
-
-        }
-        else
-        {
-
-            echo '
-
-            <script type="text/javascript">
-                var URLactual = window.location;  
-                if (URLactual != "'.get_site_url().'/login")
-                {
-                    window.location.href = "'.get_site_url().'/login";
-                }
-
-            </script>
-
-            ';
-
-        }
-
-?>
-
-
-                            <ul class="widget widget-menu unstyled">
-                            
-                            </ul>
-
-                        </div>
-                        <!--/.sidebar-->
-                        <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
-                            <?php dynamic_sidebar( 'primary-widget-area' ); ?>
-                        <?php endif; ?>
-                        <!--Inico Sidebar -->
+                    <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
+                    <?php dynamic_sidebar( 'primary-widget-area' ); ?>
+                    <?php endif; ?>
+                    <!--Inico Sidebar -->
                     </div>
+
+                    <?php
+                    if (get_current_user_id() != NULL) 
+                    {
+                        //echo "<p class='exito'><b>Usuario validado</b>. Puede ingresar los datos.<p></br>";
+                    }
+                    else
+                    {
+                        echo '
+                            <script type="text/javascript">
+                                var URLactual = window.location;  
+                                if (URLactual != "'.get_site_url().'/login")
+                                {
+                                    window.location.href = "'.get_site_url().'/login";
+                                }
+                            </script>
+                        ';
+                    }
+                    ?>
+
+
+                    <?php
+                    if (get_current_user_id() != NULL) 
+                    {
+                        echo '
+                        <div class="span9">
+                            <div class="content">
+                        ';
+                    }
+                    ?>
+ 

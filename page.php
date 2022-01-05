@@ -1,11 +1,6 @@
 ﻿<?php get_header(); ?>
 
-
-<div class="span9">
-                        <div class="content">
-
                       
-<!--/#btn-controls-->
                             <div class="module">
                                 <div class="module-head">
                                     <h3>
@@ -15,22 +10,11 @@
                                     <div class="chart inline-legend grid">
 
                                         <?php the_content(); ?>
-
-
                                     
                                     </div>
                                 </div>
                             </div>
-                            <!--/.module-->
 
-
-
-
-
-
-                        </div>
-                        <!--/.content-->
-                    </div>
 
 
 
