@@ -64,15 +64,14 @@ $current_user_roles = $current_user->roles;
                             <li><a href="#"><i class="icon-bar-chart"></i></a></li>
                         </ul>
 
-
+                        <!--
                         <form id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                             <input type="text" class="search-field" name="s" placeholder="Search" value="<?php echo get_search_query(); ?>">
                             <input type="submit" value="Search">
                         </form> 
-
-
-
+                        -->
                         <?php //get_search_form(); ?>
+                        
                         <ul class="nav pull-right">
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
                                 <b class="caret"></b></a>
@@ -102,11 +101,10 @@ $current_user_roles = $current_user->roles;
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
-<<<<<<< HEAD
-                        -->
 
-=======
->>>>>>> 37ad2b31af91d254c57691ac1f15dd9395d29147
+                            -->
+
+
 
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -143,14 +141,22 @@ $current_user_roles = $current_user->roles;
                             </ul>
 
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                <li class="active">
+                                    <a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard</a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox <b class="label green pull-right">
-                                    11</b> </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks <b class="label orange pull-right">
-                                    19</b> </a></li>
+                                <li>
+                                    <a href="activity.html"><i class="menu-icon icon-bullhorn"></i>News Feed </a>
+                                </li>
+                                <li>
+                                    <a href="message.html"><i class="menu-icon icon-inbox"></i>Inbox 
+                                        <b class="label green pull-right">11</b> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="task.html"><i class="menu-icon icon-tasks"></i>Tasks 
+                                        <b class="label orange pull-right">19</b> 
+                                    </a>
+                                </li>
                             </ul>
                             <!--/.widget-nav-->
                             
@@ -163,10 +169,16 @@ $current_user_roles = $current_user->roles;
                                 <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
                             </ul>
                             <!--/.widget-nav-->
+
+
+
                             <ul class="widget widget-menu unstyled">
-                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
-                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>More Pages </a>
+                                <li>
+                                    <a class="collapsed" data-toggle="collapse" href="#togglePages">
+                                        <i class="menu-icon icon-cog"></i>
+                                        <i class="icon-chevron-down pull-right"></i>
+                                        <i class="icon-chevron-up pull-right"></i>More Pages 
+                                    </a>
                                     <ul id="togglePages" class="collapse unstyled">
                                         <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
                                         <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
@@ -175,6 +187,90 @@ $current_user_roles = $current_user->roles;
                                 </li>
                                 <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
+
+
+
+
+
+
+
+
+
+
+
+<?php
+        if (get_current_user_id() != NULL) 
+        {
+
+            echo "<p class='exito'><b>Usuario validado</b>. Puede ingresar los datos.<p></br>";
+
+            /*
+            echo '
+            <script type="text/javascript">
+            var URLactual = window.location;  alert(URLactual);
+            </script>
+            ';
+            */
+
+
+        }
+        else
+        {
+
+            // echo "<p class='exito'><b>Usuario no validado</b>.<p>";
+
+            /*
+            echo '
+            <script type="text/javascript">
+            
+            var URLactual = window.location;  
+            alert(URLactual);
+            
+            </script>
+            
+
+            ';
+
+            
+            echo '
+            <script type="text/javascript">
+                window.location.href = "'.get_site_url().'/login";
+            </script>
+            ';
+            */
+
+            echo '
+
+            <script type="text/javascript">
+                var URLactual = window.location;  
+                if (URLactual != "'.get_site_url().'/login")
+                {
+                    window.location.href = "'.get_site_url().'/login";
+                }
+
+            </script>
+
+
+            ';
+
+
+
+
+        }
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 
                             <ul class="widget widget-menu unstyled">
                             
