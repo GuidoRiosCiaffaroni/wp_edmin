@@ -58,13 +58,21 @@ $current_user_roles = $current_user->roles;
                         ?>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
 
+                    <?php
+                    if (get_current_user_id() != NULL) 
+                    {
+                        echo '
+                            <ul class="nav nav-icons">
+                                <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
+                                <li><a href="#"><i class="icon-eye-open"></i></a></li>
+                                <li><a href="#"><i class="icon-bar-chart"></i></a></li>
+                            </ul>
+                        ';
+                    }
+                    ?>
 
+                       
 
-                        <ul class="nav nav-icons">
-                            <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-                            <li><a href="#"><i class="icon-eye-open"></i></a></li>
-                            <li><a href="#"><i class="icon-bar-chart"></i></a></li>
-                        </ul>
 
                         <!--
                         <form id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -74,13 +82,21 @@ $current_user_roles = $current_user->roles;
                         -->
 
                         <?php //get_search_form(); ?>
+
+                    <ul class="nav pull-right">
+
+                    <?php
+
+
+                    if (get_current_user_id() != NULL) 
+                    {
+                     echo '
                         
-                        <ul class="nav pull-right">
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
                                 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">                                    
-                                    
-                                    <?php 
+                                <ul class="dropdown-menu">  
+
+                    ';
                                     wp_nav_menu( 
                                         array( 
                                             'theme_location' => 'main-menu', 
@@ -88,24 +104,29 @@ $current_user_roles = $current_user->roles;
                                             'link_after' => '</span>' 
                                         ) 
                                     ); 
-                                    ?>
+
+                    echo '
                                 </ul>
                             </li>
+                    ';
 
-                            
+
+                    echo '
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">  </a></li>
                                     <li><a href="#">Item No. 1</a></li>
-                                    <li><a href="#">Don't Click</a></li>
+                                    <li><a href="#">Don\'t Click</a></li>
                                     <li class="divider"></li>
                                     <li class="nav-header">Example Header</li>
                                     <li><a href="#">A Separated link</a></li>
                                 </ul>
                             </li>
 
+                    ';
 
+                    echo '
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/user.png" class="nav-avatar" />
@@ -116,15 +137,22 @@ $current_user_roles = $current_user->roles;
                                     <li><a href="#">Edit Profile</a></li>
                                     <li><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?php echo wp_logout_url( home_url() ); ?>">Logout</a></li>
+                                    <li><a href="'.wp_logout_url(home_url()).'">Logout</a></li>
                                 </ul>
                             </li>
+
+                    ';
+
+
+
+
+
+
+
+                    }
+                    ?>
+
                         </ul>
-
-
-
-
-
                     </div>
                     <!-- /.nav-collapse -->
                 </div>
@@ -140,12 +168,12 @@ $current_user_roles = $current_user->roles;
 
 
                     <?php
+                    // activa sidebar solo si el usuario esta registrado 
                     if (get_current_user_id() != NULL) 
                     {
                         get_sidebar();
                     }
                     ?>
-
 
                     <?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
                     <?php dynamic_sidebar( 'primary-widget-area' ); ?>
@@ -163,13 +191,22 @@ $current_user_roles = $current_user->roles;
                         echo '
                             <script type="text/javascript">
                                 var URLactual = window.location;  
-                                if (URLactual != "'.get_site_url().'/login")
+                                if (URLactual != "'.get_site_url().'/login" )
                                 {
                                     window.location.href = "'.get_site_url().'/login";
+                                    
+                                    if(URLactual == "'.get_site_url().'/lostpassword")
+                                    {
+                                       // window.location.href = "'.get_site_url().'/login";
+                                    }
+                                    
                                 }
+
                             </script>
                         ';
                     }
+
+
                     ?>
 
 
