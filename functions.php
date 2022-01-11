@@ -12,3 +12,9 @@ function ocultar_admin_bar(){
 }
 add_action('after_setup_theme','ocultar_admin_bar');
 
+
+
+
+
+
+
