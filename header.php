@@ -139,17 +139,105 @@ $current_user_roles = $current_user->roles;
                             </li>
 
                     ';
-
-
-
-
-
-
-
                     }
                     ?>
 
                         </ul>
+
+
+ 
+<?php
+    echo '
+
+
+
+
+<script>
+
+var time = 1 * 60;
+setInterval(function() {
+  var seconds = time % 60;
+  var minutes = (time - seconds) / 60;
+  if (seconds.toString().length == 1) {
+    seconds = "0" + seconds;
+  }
+  if (minutes.toString().length == 1) {
+    minutes = "0" + minutes;
+  }
+  document.getElementById("time").innerHTML = minutes + ":" + seconds;
+  time--;
+  if (time == 0) {
+    window.location.href = "'.esc_url( home_url( '/' ) ).'";
+  }
+}, 1000);
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ';
+
+
+?>
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="timer" onload="timer(3600)">
+  <div>Recarga</div>
+  <div class="time">
+    <strong>Tiempo Restante: <span id="time">Cargando...</span></strong>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <!-- /.nav-collapse -->
                 </div>
