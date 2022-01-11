@@ -1,9 +1,12 @@
 <?php
 // Ocultar barra de admin a usuarios no administradores
 function ocultar_admin_bar(){
-   if(current_user_can('administrator')){
+   if(current_user_can('administrator'))
+   {
       show_admin_bar(true);
-   }else{
+   }
+   else
+   {
        show_admin_bar(false);
    }
 }
