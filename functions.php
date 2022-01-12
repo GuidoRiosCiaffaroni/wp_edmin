@@ -14,7 +14,8 @@ add_action('after_setup_theme','ocultar_admin_bar');
 
 
 
-
-
+//Redireccionar a una página después del login
+function redireccionar(){ return ('http://localhost/wordpress/'); } add_filter('login_redirect','redireccionar');
+add_filter('show_admin_bar','__return_false');
 
 

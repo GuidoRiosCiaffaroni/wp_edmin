@@ -29,7 +29,7 @@ $current_user_roles = $current_user->roles;
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
+
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta name="viewport" content="width=device-width" />
@@ -44,6 +44,7 @@ $current_user_roles = $current_user->roles;
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
     </head>
+
     <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
         <div class="navbar navbar-fixed-top">
@@ -87,6 +88,7 @@ $current_user_roles = $current_user->roles;
 
                     if (get_current_user_id() != NULL) 
                     {
+                        /*
                      echo '
                         
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador
@@ -106,6 +108,7 @@ $current_user_roles = $current_user->roles;
                                 </ul>
                             </li>
                     ';
+                    */
 
 
                     echo '
@@ -126,15 +129,16 @@ $current_user_roles = $current_user->roles;
                     echo '
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="'.get_template_directory_uri().'/images/user.png" class="nav-avatar" />
+                                <!-- <img src="'.get_template_directory_uri().'/images/user.png" class="nav-avatar" /> -->
+                                <img src="'.get_avatar_url( $current_user->user_email).'" class="nav-avatar" />
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><?php echo $current_user_roles; ?></li>
-                                    <li><a href="#">Your Profile</a></li>
+                                    <li><a href="'.home_url().'/user">Perfil</a></li>
                                     <li><a href="#">Edit Profile</a></li>
                                     <li><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="'.wp_logout_url(home_url()).'">Logout</a></li>
+                                    <li><a href="'.wp_logout_url(home_url()).'">Salir</a></li>
                                 </ul>
                             </li>
 
@@ -148,63 +152,33 @@ $current_user_roles = $current_user->roles;
  
 <?php
     echo '
-
-
-
-
-<script>
-
-var time = 1 * 60;
-setInterval(function() {
-  var seconds = time % 60;
-  var minutes = (time - seconds) / 60;
-  if (seconds.toString().length == 1) {
-    seconds = "0" + seconds;
-  }
-  if (minutes.toString().length == 1) {
-    minutes = "0" + minutes;
-  }
-  document.getElementById("time").innerHTML = minutes + ":" + seconds;
-  time--;
-  if (time == 0) {
-    window.location.href = "'.esc_url( home_url( '/' ) ).'";
-  }
-}, 1000);
-
-
-
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        var time = 1 * 60;
+        setInterval(function() 
+        {
+            var seconds = time % 60;
+            var minutes = (time - seconds) / 60;
+            if (seconds.toString().length == 1) 
+            {
+                seconds = "0" + seconds;
+            }
+            if (minutes.toString().length == 1) 
+            {
+                minutes = "0" + minutes;
+            }
+            document.getElementById("time").innerHTML = minutes + ":" + seconds;
+            time--;
+            if (time == 0) 
+            {
+                window.location.href = "'.esc_url( home_url( '/' ) ).'";
+            }
+        }, 1000);
+    </script>
 
     ';
 
 
 ?>
-
-
-
-
-
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="timer" onload="timer(3600)">
@@ -213,27 +187,6 @@ setInterval(function() {
     <strong>Tiempo Restante: <span id="time">Cargando...</span></strong>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
