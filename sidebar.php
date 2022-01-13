@@ -1,13 +1,17 @@
 <!--Inico Sidebar -->
                         
+<?php
+    global $wpdb;                   // datos del sistema
+    // echo '--->'.get_current_user_id().'<br>'; 
+    $current_user = wp_get_current_user();
+?>
+
                         <div class="sidebar">
 
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="<?php echo $url ?>"><?php echo 'Usuario : '.$current_user_login; ?></a></i>
+                                <li class="active"><a href="<?php echo $url ?>">
+                                    <?php printf( __( 'Username: %s <br/>', 'textdomain' ), esc_html( $current_user->user_login ) ); ?></a></i>
                             </ul>
-
-
-
 
                             <ul class="widget widget-menu unstyled">
                                 <li>
@@ -17,9 +21,9 @@
                                         <i class="icon-chevron-up pull-right"></i>More Pages 
                                     </a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="other-login.html"><i class="icon-inbox"></i>Login </a></li>
-                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
-                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
+                                        <li><a href="http://localhost/wordpress/dashboart-resume/"><i class="icon-dashboard"></i>Resumen</a></li>
+                                        <li><a href="#"><i class="icon-dashboard"></i>Profile </a></li>
+                                        <li><a href="#"><i class="icon-dashboard"></i>All Users </a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -63,9 +67,6 @@
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
-
-
-
 
 
                             <ul class="widget widget-menu unstyled">

@@ -110,7 +110,7 @@ $current_user_roles = $current_user->roles;
                     ';
                     */
 
-
+                    /*
                     echo '
                             <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
                                 <b class="caret"></b></a>
@@ -125,9 +125,10 @@ $current_user_roles = $current_user->roles;
                             </li>
 
                     ';
+                    */
+
 
                     echo '
-                            <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- <img src="'.get_template_directory_uri().'/images/user.png" class="nav-avatar" /> -->
                                 <img src="'.get_avatar_url( $current_user->user_email).'" class="nav-avatar" />
@@ -135,8 +136,6 @@ $current_user_roles = $current_user->roles;
                                 <ul class="dropdown-menu">
                                     <li><?php echo $current_user_roles; ?></li>
                                     <li><a href="'.home_url().'/user">Perfil</a></li>
-                                    <li><a href="#">Edit Profile</a></li>
-                                    <li><a href="#">Account Settings</a></li>
                                     <li class="divider"></li>
                                     <li><a href="'.wp_logout_url(home_url()).'">Salir</a></li>
                                 </ul>
@@ -180,6 +179,10 @@ $current_user_roles = $current_user->roles;
 
 ?>
 
+
+
+
+<!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="timer" onload="timer(3600)">
   <div>Recarga</div>
@@ -187,7 +190,7 @@ $current_user_roles = $current_user->roles;
     <strong>Tiempo Restante: <span id="time">Cargando...</span></strong>
   </div>
 </div>
-
+-->
 
 
 
