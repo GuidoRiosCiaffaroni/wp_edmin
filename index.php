@@ -1,4 +1,5 @@
-﻿<?php get_header(); ?>
+﻿<!-- Comentario -->
+<?php get_header(); ?>
                     <!--/.span3-->
                     <div class="span9">
                         <div class="content">
