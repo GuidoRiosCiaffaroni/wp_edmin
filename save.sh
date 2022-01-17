@@ -17,7 +17,7 @@ git branch -M main
 
 echo "git remote add origin https://github.com/GuidoRiosCiaffaroni/wp_edmin.git"
 git remote add origin https://github.com/GuidoRiosCiaffaroni/wp_edmin.git
-git push https://$(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)@github.com/GuidoRiosCiaffaroni/wp_edmin.git
+
 
 echo "git push -u origin main"
 git push -u origin main
